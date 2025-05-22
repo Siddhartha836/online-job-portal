@@ -1,0 +1,732 @@
+/* Basic Responsive Adjustments */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 90%; /* Make container slightly smaller on larger screens */
+    max-width: 1200px; /* Max width for the main content */
+    margin: 20px auto; /* Center the container */
+    padding: 0 15px; /* Add some padding on the sides */
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex; /* Use flexbox for navigation */
+    justify-content: center; /* Center nav items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+header nav ul li {
+    margin: 5px 15px; /* Adjust spacing */
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+header nav a:hover {
+    color: #5cb85c; /* Highlight color on hover */
+}
+
+/* Forms and Buttons */
+.form-section {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+/* Added styles for the search form */
+.search-form form {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 15px; /* Add space between form groups and button */
+    align-items: flex-end; /* Align items to the bottom */
+}
+
+.search-form .form-group {
+    flex: 1; /* Allow form groups to grow */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin-bottom: 0; /* Remove bottom margin as gap handles spacing */
+}
+
+.search-form button[type="submit"] {
+    /* Adjust button styling if needed */
+    margin-bottom: 0; /* Align button with inputs */
+}
+
+.search-form .button-small {
+     margin-bottom: 0; /* Align button with inputs */
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: calc(100% - 22px); /* Adjust width considering padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus {
+    border-color: #5cb85c; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5); /* Add subtle shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+
+.button {
+    display: inline-block;
+    background: #5cb85c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transition */
+}
+
+.button:hover {
+    background: #4cae4c; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.button-small {
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+/* Job/Application List Items */
+.job-list .job-item,
+.application-list .application-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+.job-list .job-item:hover,
+.application-list .application-item:hover {
+    transform: translateY(-5px); /* Floating effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.job-item h3,
+.application-item h3 {
+    margin-top: 0;
+    color: #337ab7; /* A different color for titles */
+}
+
+/* Alerts */
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Fade transition */
+}
+
+.alert.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.alert.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+/* Status Styling (for My Applications) */
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-accepted {
+    color: green;
+    font-weight: bold;
+}
+
+.status-rejected {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    background: #333;
+    color: #fff;
+}
+
+/* Simple Floating Animation Example (Optional) */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Apply animation to an element, e.g., a logo or a specific icon */
+/* .floating-element {
+    animation: float 3s ease-in-out infinite;
+} */
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center stacked items */
+    }
+
+    header nav ul li {
+        margin: 5px 0; /* Adjust vertical spacing */
+    }
+
+    .container {
+        width: 95%; /* Use more width on smaller screens */
+    }
+
+    .button {
+        width: 100%; /* Make buttons full width */
+        text-align: center;
+    }
+
+    .button-small {
+         width: auto; /* Keep small buttons auto width */
+         display: inline-block; /* Ensure they are inline */
+    }
+
+    .job-item .button,
+    .application-item .button {
+         width: auto; /* Keep buttons within list items auto width */
+         display: inline-block; /* Ensure they are inline */
+         margin-right: 10px; /* Add spacing between buttons */
+    }
+
+    .search-form form {
+        flex-direction: column; /* Stack search form items vertically */
+        align-items: stretch; /* Stretch items to fill width */
+    }
+
+    .search-form .form-group {
+        min-width: auto; /* Remove min-width constraint */
+        width: 100%; /* Make form groups full width */
+    }
+
+    .search-form button[type="submit"],
+    .search-form .button-small {
+        width: 100%; /* Make buttons full width */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .form-section,
+    .job-list .job-item,
+    .application-list .application-item {
+        padding: 10px; /* Reduce padding */
+    }
+}
+
+
+/* Enhanced Animations and Transitions */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Hero Section Enhancements */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #6c5ce7, #a363d9);
+    color: white;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Enhanced Feature Items */
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.feature-item {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.cta-buttons .button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-buttons .button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Job Card Enhancements */
+.job-item {
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #5cb85c;
+}
+
+.job-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(92, 184, 92, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.job-item:hover::before {
+    opacity: 1;
+}
+
+/* Admin Panel Styles */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+.admin-table tr:hover {
+    background: #f9f9f9;
+}
+
+.button-danger {
+    background: #dc3545;
+}
+
+.button-danger:hover {
+    background: #c82333;
+}
+
+.button-success {
+    background: #28a745;
+}
+
+.button-success:hover {
+    background: #218838;
+}
+
+/* Blog Form Styles */
+.blog-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-form textarea {
+    min-height: 300px;
+    font-family: inherit;
+}
+
+.button-secondary {
+    background: #6c757d;
+    margin-left: 10px;
+}
+
+.button-secondary:hover {
+    background: #5a6268;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+select:focus {
+    border-color: #5cb85c;
+    outline: none;
+}
+
+
+/* Blog Styles */
+.blog-posts {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.post-meta {
+    color: #666;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.post-meta span {
+    margin: 0 5px;
+}
+
+.category {
+    background: #5cb85c;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.post-excerpt {
+    margin: 15px 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.blog-post-full {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-content {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.pagination .button.active {
+    background: #4cae4c;
+}
+
+
+/* Testimonial Form Styles */
+.testimonial-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-form .form-group {
+    margin-bottom: 20px;
+}
+
+.testimonial-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.testimonial-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+/* Star Rating Animation */
+@keyframes star-pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.star-rating label:hover {
+    animation: star-pop 0.3s ease;
+}
+.button-secondary:hover {
+    background: #5a6268;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+select:focus {
+    border-color: #5cb85c;
+    outline: none;
+}
+
+
+/* Blog Styles */
+.blog-posts {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.post-meta {
+    color: #666;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.post-meta span {
+    margin: 0 5px;
+}
+
+.category {
+    background: #5cb85c;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.post-excerpt {
+    margin: 15px 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.blog-post-full {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-content {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.pagination .button.active {
+    background: #4cae4c;
+}
+
+/* Logo Upload Styles */
+.upload-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.current-logo {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.current-logo img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: white;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.current-logo img:hover {
+    transform: scale(1.05);
+}
+
+.upload-form input[type="file"] {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.upload-form small {
+    color: #666;
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.button-secondary {
+    background: #6c757d;
+    margin-left: 10px;
+}
+
+.button-secondary:hover {
+    background: #5a6268;
+}
